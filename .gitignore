@@ -1,1 +1,6 @@
+# This for folder ignore
+.vscode
+
+# This for file ignore
 *.exe
+input.txt
