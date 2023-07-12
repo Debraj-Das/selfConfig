@@ -1,6 +1,6 @@
 <h1 align="center" style="color: #44AEFB;">👨🏻‍💻 Hi 👋, I'm Debraj Das</h1>
 
-<h2 align="center">A passionate Web Developer</h2>
+<h2 align="center">A passionate Web Developer <img align=center src="https://user-images.githubusercontent.com/26017543/213364962-e9e6b262-0dc8-4cca-9914-7f336340e26d.png" alt="Web" width="36" height="36" /> </h2>
 
 - 🔭 I’m currently working on **MERN Stack**
 - 🌱 I’m currently learning **React Native**
@@ -8,6 +8,12 @@
 - 🤝 I’m looking for help with **Competitive Programming**
 - 👨‍💻 All of my projects are available at&nbsp; [Projects](https://github.com/Debraj-Das?tab=repositories)
 - 💬 Ask me about anything [here](https://github.com/Debraj-Das/Debraj-Das/issues)
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/typio/typio/output/github-contribution-grid-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/typio/typio/output/github-contribution-grid-snake.svg">
+  <img  alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/typio/typio/output/github-contribution-grid-snake.svg">
+</picture>
 
 -----
 

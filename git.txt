@@ -1,0 +1,107 @@
+* To show the status of git reprository
+    git status
+
+* To intialize git reprository
+    git init
+
+* To add files to git reprository
+    git add <file name>
+(or add all files to git reprository by using dot (.) after git add)
+    git add .
+
+* To commit files to git reprository
+    git commit -m "commit message"
+(if you forget to add -m "commit message" then it will open vim editor to add commit message)
+
+* To push files to git reprository
+    git push origin master/<branch name>
+
+* To pull files from git reprository
+    git pull origin master/<branch name>
+
+* To clone git reprository
+    git clone <git reprository url>
+
+* To create new branch
+    git branch <branch name>
+(if you want to create branch and switch to that branch then use below command)
+    git checkout -b <branch name>
+
+* To switch to branch
+    git checkout <branch name>
+
+* To merge branch
+    git merge <branch name>
+(if you want to merge branch to master branch then switch to master branch and use above command)
+
+* To delete branch
+    git branch -d <branch name>
+    (if you want to delete branch forcefully (unmerge branch) then use below command)
+    git branch -D <branch name>
+
+    (it will delete branch locally and if you want to delete branch from remote then use below command)
+    git push origin --delete <branch name>
+    (similarly if you want to delete branch forcefully (unmerge) from remote then use below command)
+    git push origin --delete --force <branch name>
+
+* To see all branches
+    git branch -a
+
+# To see all branches with last commit
+    git branch -v
+
+* To see all branches with last commit and last commit message
+    git branch -vv
+
+* To see all branches with last commit and last commit message and last commit author
+    git branch -vvv
+
+* To see all branches with last commit and last commit message and last commit author and last commit date
+    git branch -vvvv
+
+* To see all branches with last commit and last commit message and last commit author and last commit date and last commit hash
+    git branch -vvvvv
+
+# To see the log of git reprository
+    git log
+(you can beautify log by using below command)
+    git log --oneline --graph --decorate --all
+(also there are many other options to beautify log)
+
+* To see the log of git reprository with last commit
+    git log -1
+
+* To see the log of git reprository with last commit and last commit message
+    git log -1 --oneline
+
+* To see the log of git reprository with last commit and last commit message and last commit author
+    git log -1 --oneline --author="author name"
+
+* To see the log of git reprository with last commit and last commit message and last commit author and last commit date
+    git log -1 --oneline --author="author name" --date="format"
+
+* To remove the git reprository
+    rm -rf .git
+
+* To remove the git reprository from remote
+    git remote remove origin
+
+* To rename the git reprository
+    git remote rename origin <new name>
+
+* To add new remote
+    git remote add <remote name> <git reprository url>
+
+* To see all remotes
+    git remote -v
+
+* To edit the git reprository url
+    git remote set-url <remote name> <git reprository url>
+
+* To see the difference between two branches
+    git diff <branch name>..<branch name>
+
+* To see the difference between two branches with last commit
+    git diff <branch name>..<branch name> -1
+
+

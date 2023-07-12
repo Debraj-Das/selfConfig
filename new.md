@@ -58,23 +58,15 @@
 
 
 -----
-<div style="display: flex ; justify-content: space-around;">
+<div align="center">
 
-<span>
+![Debraj's GitHub stats](https://github-readme-stats.vercel.app/api?username=debraj-das&show_icons=true)
 
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=debraj-das&show_icons=true&theme=tokyonight)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=debraj-das&layout=pie)](https://github.com/debraj-das/github-readme-stats)
 
-</span>
-
-<span>
-
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=debraj-das&layout=pie&theme=tokyonight)](https://github.com/debraj-das/github-readme-stats)
-
-</span>
+[![Leetcode Profile](https://leetcode.card.workers.dev/?username=Debraj_01&style=flat&font=baloo)](https://leetcode.com/Debraj_01/)
 
 </div>
-
-
 
 -----
 
