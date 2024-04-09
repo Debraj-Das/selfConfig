@@ -1,0 +1,10 @@
+# setup the virtual enviroment in python
+"install virtualenv"
+sudo apt install virtualenv
+"initialised the reprojectory as virtual enviroment as .venv"
+virtualenv .venv
+"active the virtual enviroment in terminal"
+source .venv/bin/activate "short `activate` using alias"
+"For deactivate the virtual enviroment in terminal"
+deactivate
+
