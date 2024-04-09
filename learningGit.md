@@ -1,20 +1,21 @@
-# To show the status of git reprository
-    git status
+# Learning basic of the Git
+## To show the status of git reprository
+    `git status`
 
-# Set up configuration for git reprository (local and global)
-    * local (for particular git reprository)
-        git config --local user.name "user name"
-        git config --local user.email "user email"
-        git config --local --list   (show the list of configuration)
+## Set up configuration for git reprository (local and global)
+    * **local (for particular git reprository)**
+        `git config --local user.name "user name"`
+        `git config --local user.email "user email"`
+        `git config --local --list`   (show the list of configuration)
         git config --local --edit   (open the config file in vim editor for edit)
 
-    * global (for all git reprository)
+    * **global (for all git reprository)**
         git config --global user.name "user name"
         git config --global user.email "user email"
         git config --global --list   (show the list of configuration)
         git config --global --edit   (open the config file in vim editor for edit)
 
-# To intialize git reprository
+## To intialize git reprository
     git init
 
     * To initialize git reprository with name
@@ -28,7 +29,7 @@
         (by default git reprository name is .git)
         (by default branch name is master)
     
-# To add files to git reprository
+## To add files to git reprository
     git add <file name>
 
     * To add all files to git reprository 
@@ -50,7 +51,7 @@
     * To remove all the files from the stage area
         git reset
 
-# To commit files to git reprository or edited the previous commit message
+## To commit files to git reprository or edited the previous commit message
     git commit -m "commit message"
     (if you forget to add -m "commit message" then it will open vim editor to add commit message)
 
@@ -60,35 +61,35 @@
     * edited one praticular commit message
         git commit --amend <commit hash>
 
-# To push files to git reprository
+## To push files to git reprository
     git push origin master/<branch name>
     
     *if you want to push branch into difference (old/new) branch then use below command)
         git push origin <branch name>:<remote branch name>
 
-# To pull files from git reprository
+## To pull files from git reprository
     git pull origin
     (default branch is remote master branch and local master branch)
 
     * pull the any remote branch to local branch
         git pull origin <remote branch name>:<local branch name>
 
-# To clone git reprository
+## To clone git reprository
     git clone <git reprository url>
 
-# To create new branch
+## To create new branch
     git branch <branch name>
     (if you want to create branch and switch to that branch then use below command)
     git checkout -b <branch name>
 
-# To switch to branch
+## To switch to branch
     git checkout <branch name>
 
-# To merge branch
+## To merge branch
     git merge <branch name>
     (if you want to merge branch to master branch then switch to master branch and use above command)
 
-# To delete branch
+## To delete branch
     git branch -d <branch name>
     (if you want to delete branch forcefully (unmerge branch) then use below command)
     git branch -D <branch name>
@@ -98,7 +99,7 @@
         (similarly if you want to delete branch forcefully (unmerge) from remote then use below command)
         git push origin --delete --force <branch name>
 
-# To see all branches
+## To see all branches
     git branch -a
 
     * To see all branches with last commit
@@ -116,7 +117,7 @@
     * To see all branches with last commit and last commit message and last commit author and last commit date and last commit hash
         git branch -vvvvv
 
-# To see the log of git reprository
+## To see the log of git reprository
     git log
     (you can beautify log by using below command)
     git log --oneline --graph --decorate --all
@@ -134,7 +135,7 @@
     * To see the log of git reprository with last commit and last commit message and last commit author and last commit date
         git log -1 --oneline --author="author name" --date="format"
 
-# To remove the git reprository
+## To remove the git reprository
     rm -rf .git
 
     * To remove the git reprository from remote
@@ -152,7 +153,7 @@
     * To edit the git reprository url
         git remote set-url <remote name> <git reprository url>
 
-# To see the difference between two branches
+## To see the difference between two branches
     git diff <branch name>..<branch name>
     (if you want to by vim editor then use below command)
     git difftool <branch name>..<branch name>
@@ -168,10 +169,10 @@
     * To see the difference between two last commit of any branch
         git diff <branch name>..<branch name> -1 -1   
 
-# change the name of branch
+## change the name of branch
     git branch -m <old branch name> <new branch name>
 
-# Compare the Two commit with each other
+## Compare the Two commit with each other
     git diff <commit hash>..<commit hash>
     (if you want to by vim editor then use below command)
     git difftool <commit hash>..<commit hash>
@@ -185,7 +186,7 @@
     * To see the difference between two last commit of any branch
         git diff <commit hash>..<commit hash> -1 -1
 
-# Go to previous the commit status 
+## Go to previous the commit status 
     * To go to previous the commit status of any file
         git checkout <commit hash> <file name>
 
@@ -204,14 +205,14 @@
     * To go to previous the commit status of all modified files
         git checkout .
 
-# To see the difference between current stage and the last commit
+## To see the difference between current stage and the last commit
     * To see the difference between the stage and the last commit
         git diff --staged
 
     * To see the difference between the modified and the last commit
         git diff
 
-    #* To see the difference between the modified and the stage
+    * To see the difference between the modified and the stage
         git diff --cached
 
     * To see the difference between the modified and the stage and the last commit
@@ -223,7 +224,7 @@
     * To see the difference between the modified and the stage and the last commit with last commit and last commit message
         git diff HEAD -1 --oneline
 
-# To untracked any file
+## To untracked any file
     * if you are not tracked before than add that files into .gitignore file
     (.gitignore file is used to ignore the files which you don't want to track)
 
