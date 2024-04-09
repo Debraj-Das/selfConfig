@@ -124,9 +124,3 @@ and all other command of normal mode
 
 
 * some practice of command mode
-
-""
-My name is Debraj Das
-My name is Debraj Das
-My name is Debraj Das
-'some practice of command mode'

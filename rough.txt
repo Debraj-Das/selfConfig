@@ -1,3 +1,0 @@
-# add the image from the github repo
-    <img src="https://raw.githubusercontent.com/username/repo-name/branch-name/path-to-image/image-name.png" alt="image description">
-

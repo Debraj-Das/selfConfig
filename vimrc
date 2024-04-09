@@ -1,40 +1,35 @@
-" Setting some decent VIM settings for programming
-" This source file comes from git-for-windows build-extra repository (git-extra/vimrc)
-
-ru! defaults.vim                " Use Enhanced Vim defaults
-set mouse=a                    " Reset the mouse setting from defaults
-set number			"Create by Debraj Das for set the number"
-set relativenumber  "relative number line"
+set mouse=a                     " Reset the mouse setting from defaults
 aug vimStartup | au! | aug END  " Revert last positioned jump, as it is defined below
 let g:skip_defaults_vim = 1     " Do not source defaults.vim again (after loading this system vimrc)
 set encoding=utf-8
 set ai                          " set auto-indenting on for programming
-set showmatch                   " automatically show matching brackets. works like it does in bbedit.
-set vb                          " turn on the "visual bell" - which is much quieter than the "audio blink"
-set laststatus=2                " make the last line where the status is two lines deep so you can see status always
+set showmatch                   " automatically show matching brackets.
+set vb                          " turn on the "visual bell" 
 set showmode                    " show the current mode
-set clipboard=unnamed           " set clipboard to unnamed to access the system clipboard under windows
 set wildmode=list:longest,longest:full   " Better command line completion
+set wildmenu
+set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+filetype on
+filetype indent on
+set smartindent						" even better autoindent (e.g. add indent after '{')
+set nobackup							" No backup file
+set nowritebackup
+syntax on
+set clipboard=unnamed
+set clipboard^=unnamedplus
+set nu
+set relativenumber
+set backspace=2
+set laststatus=2
+set autoread
+set autoindent
+set tabstop=3
+set shiftwidth=3
+set smarttab
+set softtabstop=3
+set foldmethod=manual "Fold the files as manual"
+set path+=**
 
-" Show EOL type and last modified timestamp, right after the filename
-" Set the statusline
-set statusline=%f               " filename relative to current $PWD
-set statusline+=%h              " help file flag
-set statusline+=%m              " modified flag
-set statusline+=%r              " readonly flag
-set statusline+=\ [%{&ff}]      " Fileformat [unix]/[dos] etc...
-set statusline+=\ (%{strftime(\"%H:%M\ %d/%m/%Y\",getftime(expand(\"%:p\")))})  " last modified timestamp
-set statusline+=%=              " Rest: right align
-set statusline+=%l,%c%V         " Position in buffer: linenumber, column, virtual column
-set statusline+=\ %P            " Position in buffer: Percentage
-
-if &term =~ 'xterm-256color'    " mintty identifies itself as xterm-compatible
-  if &t_Co == 8
-    set t_Co = 256              " Use at least 256 colors
-  endif
-  " set termguicolors           " Uncomment to allow truecolors on mintty
-endif
-"------------------------------------------------------------------------------
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
     " Set UTF-8 as the default encoding for commit messages
@@ -54,74 +49,91 @@ if has("autocmd")
       autocmd Filetype diff
       \ highlight WhiteSpaceEOL ctermbg=red |
       \ match WhiteSpaceEOL /\(^+.*\)\@<=\s\+$/
-endif " has("autocmd")
+endif 
 
-" Set vim configuration using copy paste
+call plug#begin('~/.config/nvim/plugged')
 
-:set autoindent
-:set tabstop=4
-:set shiftwidth=4
-:set smarttab
-:set softtabstop=4
-"Fold the files as indent"
-set foldmethod=indent
-set foldnestmax=10
-set nofoldenable
-set foldlevel=2
+Plug 'scrooloose/nerdtree'
+Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'vimwiki/vimwiki'
+Plug 'tpope/vim-commentary'
+Plug 'bfrg/vim-cpp-modern'
+Plug 'vim-syntastic/syntastic'
+Plug 'kshenoy/vim-signature'
+Plug 'tpope/vim-surround'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'morhetz/gruvbox'
+Plug 'rafi/awesome-vim-colorschemes'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
-nnoremap zO :set nofoldenable<CR>
+call plug#end()
 
-" auto  complete the brakets
-inoremap ( ()<ESC>i
-inoremap [ []<ESC>i
-inoremap " ""<ESC>i
-inoremap ' ''<ESC>i
-inoremap ` ``<ESC>i
+colorscheme space-vim-dark
 
-"Mapping the key"
+"Mapping the key
+noremap <TAB> %
+noremap <C-a> ggVG
 
-"Save for the current file = ctrl + l"
-nnoremap <silent> <C-s> :w<CR>
-
-"save and quit = ctrl + p"
-nnoremap <silent> <C-p> :wq<CR>
-
-"chance to inset to normal mode"
-inoremap <C-l> <esc>
-
-" --- Create template for C++ language ---
-autocmd BufNewFile *.c 0r ~/template/temp.c
-
-" Show the mode you are on the last line.
-set showmode
-
-" Enable auto completion menu after pressing TAB.
-set wildmenu
-
-" Make wildmenu behave like similar to Bash completion.
-set wildmode=list:longest
-
-" There are certain files that we would never want to edit with Vim.
-" Wildmenu will ignore files with these extensions.
-set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
-
-" Disable compatibility with vi which can cause unexpected issues.
-set nocompatible
-
-" Enable type file detection. Vim will be able to try to detect the type of file in use.
-filetype on
-
-" Load an indent file for the detected file type.
-filetype indent on
-
-" Turn syntax highlighting on.
-syntax on
-
-set smartindent         " even better autoindent (e.g. add indent after '{')
-
-" format the code using = ctrl + f
-"nnoremap <silent> <C-f> :!C:/Users/debra/.vim/clang-format.exe -i  -style=file --fallback-style=Microsoft *.cpp <CR>
-
-"This is for not copy direct the delete"
+"normal mode key binding
+nnoremap <enter> o<esc>
+nnoremap <C-l> :w <CR>
+nnoremap <C-n> :tabnew <CR>
+nnoremap <C-Down> :m+1<CR>
+nnoremap <C-Up> :m-2<CR>
+nnoremap <C-k> :q <CR>
 nnoremap d "_d
+nnoremap <Backspace> "_xh
 
+"virtual mode key binding
+vnoremap <C-Down> :m '>+1<CR>gv=gv
+vnoremap <C-Up> :m '<-2<CR>gv=gv 
+vnoremap < <gv
+vnoremap > >gv
+vnoremap d "_d
+
+"insert mode key binding
+inoremap <C-l> <esc>
+inoremap <C-j> <Esc>o
+inoremap <C-h> <C-w>
+inoremap <C-Down> <esc>:m+1<CR>
+inoremap <C-Up> <esc>:m-2<CR>
+inoremap {<CR> {<CR>}<esc>ko
+
+let mapleader = " "
+
+noremap <Leader>j <esc>:tabprevious <CR>
+noremap <Leader>k <esc>:tabnext <CR>
+noremap <Leader>y <esc>:%y+<CR>
+noremap <Leader>v <C-v>
+noremap <Leader>r <C-r>
+
+nnoremap <Leader>s :source %<CR>
+nnoremap <Leader>e :NERDTreeToggle<CR>:NERDTreeRefreshRoot<CR>
+nnoremap <leader>h :set hlsearch!<CR>
+
+"Clipboard configuration
+let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
+if executable(s:clip)
+        augroup WSLYank
+                    autocmd!
+                            autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+                                augroup END
+                            endif
+ 
+        au BufNewFile,BufRead *.tex
+            \ set nocursorline |
+            \ set nornu |
+            \ set number |
+            \ let g:loaded_matchparen=1 |
+
+" open the vrc
+
+command! Vrc call VimrcOpen()
+function! VimrcOpen()
+	tabedit ~/.config/nvim/init.vim
+endfunction
