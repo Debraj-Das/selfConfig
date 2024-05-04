@@ -7,6 +7,8 @@ virtualenv .venv
 source .venv/bin/activate "short `activate` using alias"
 "For deactivate the virtual enviroment in terminal"
 deactivate
+"For freeze the module in the virtual enviroment"
+pip freeze > requirements.txt
 
 # some important command in tmux
 # create a new session
