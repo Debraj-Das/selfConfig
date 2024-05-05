@@ -6,6 +6,16 @@
       "segments": [
         {
           "foreground": "#3A86FF",
+          "properties": {
+            "fetch_version": false,
+            "fetch_virtual_env": true
+          },
+          "style": "plain",
+          "template": "<{{ if .Root }}lightBlue{{ else }}green{{ end }}>-[</>\ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }}{{ end }}{{ .Full }}{{ end }}<{{ if .Root }}lightBlue{{ else }}green{{ end }}>]</>",
+          "type": "python"
+        },
+        {
+          "foreground": "#3A86FF",
           "style": "plain",
           "template": "\uf17c ",
           "type": "os"
