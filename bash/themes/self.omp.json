@@ -17,7 +17,7 @@
         {
           "foreground": "#3A86FF",
           "style": "plain",
-          "template": "\uf17c ",
+          "template": "{{.Icon}} ",
           "type": "os"
         },
         {

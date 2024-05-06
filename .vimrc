@@ -51,37 +51,12 @@ if has("autocmd")
       \ match WhiteSpaceEOL /\(^+.*\)\@<=\s\+$/
 endif 
 
-call plug#begin('~/.config/nvim/plugged')
-
-Plug 'scrooloose/nerdtree'
-Plug 'itchyny/lightline.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'vimwiki/vimwiki'
-Plug 'tpope/vim-commentary'
-Plug 'bfrg/vim-cpp-modern'
-Plug 'vim-syntastic/syntastic'
-Plug 'kshenoy/vim-signature'
-Plug 'tpope/vim-surround'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'morhetz/gruvbox'
-Plug 'rafi/awesome-vim-colorschemes'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-
-call plug#end()
-
-colorscheme space-vim-dark
-
 "Mapping the key
 noremap <TAB> %
 noremap <C-a> ggVG
 
 "normal mode key binding
 nnoremap <enter> o<esc>
-nnoremap <C-l> :w <CR>
 nnoremap <C-n> :tabnew <CR>
 nnoremap <C-Down> :m+1<CR>
 nnoremap <C-Up> :m-2<CR>
@@ -97,7 +72,6 @@ vnoremap > >gv
 vnoremap d "_d
 
 "insert mode key binding
-inoremap <C-l> <esc>
 inoremap <C-j> <Esc>o
 inoremap <C-h> <C-w>
 inoremap <C-Down> <esc>:m+1<CR>
@@ -112,8 +86,7 @@ noremap <Leader>y <esc>:%y+<CR>
 noremap <Leader>v <C-v>
 noremap <Leader>r <C-r>
 
-nnoremap <Leader>s :source %<CR>
-nnoremap <Leader>e :NERDTreeToggle<CR>:NERDTreeRefreshRoot<CR>
+nnoremap <Leader>s :w<CR>
 nnoremap <leader>h :set hlsearch!<CR>
 
 "Clipboard configuration
