@@ -72,7 +72,7 @@
             "always_enabled": true
           },
           "style": "plain",
-          "template": " {{ if gt .Code 0 }}\udb80\udc30{{ else }}\uf4a7{{ end }} ",
+          "template": " {{ if gt .Code 0 }}<#F44336>?{{ else }}<#00E676>+{{ end }}{{.Code}}",
           "type": "status"
         },
         {
